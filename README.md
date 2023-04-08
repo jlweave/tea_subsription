@@ -56,8 +56,7 @@ WIP
 
 ## Tech Stack
 
-WIP
-
+![Screen Shot 2023-04-08 at 3 13 10 PM](https://user-images.githubusercontent.com/108754743/230742771-4c12be21-8d9e-4d50-b172-bc9bd227f792.png)
 
 ## Setup and Installation
 
