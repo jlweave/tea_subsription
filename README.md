@@ -1,24 +1,88 @@
-# README
+</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
 
-Things you may want to cover:
+ <img width="600" src="https://user-images.githubusercontent.com/108754743/230742170-6ac709c0-7539-49b2-842f-ac0628826881.jpg">
 
-* Ruby version
+ 
+</p>
 
-* System dependencies
+<h3 align="center">This repo handles only the Back End project responsibilities. 
+</h3>
 
-* Configuration
+## Table of Contents
 
-* Database creation
+- [Project Overview](#project-overview)
+- [Schema](#schema)
+- [Tech Stack](#tech-stack)
+- [Setup and Installation](#setup-and-installation)
+- [Learning Goals](#learning-goals)
+- [Repository Owner](#repository-owner)
 
-* Database initialization
+## Project Overview
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+This project is for Mod 4 take home practice. The goals for this project are to create three endpoint with CRUD function: 1) customer's tea subscription 2) cancel customer's tea subscription 3) see all customer's subscription(active and cancelled)
 
-* Deployment instructions
+## Schema
 
-* ...
+![take_home_mod4](https://user-images.githubusercontent.com/108754743/230741556-fd9577b1-e1ee-486a-b6df-22b3b6e39d31.png)
+
+## API Endpoints
+Here is a list of all mapped client requests with their respective json responses below them:
+<details>
+<summary> 'customer's tea subscription' </summary>
+<br>
+  
+ WIP
+  
+ </details>
+ 
+<details>
+<summary> 'cancel customer's tea subscription' </summary>
+<br>
+
+WIP
+
+</details>
+  
+<details>
+<summary> 'show all customers subscriptions (active and cancelled)' </summary>
+<br> 
+
+WIP
+
+ </details> 
+
+## Tech Stack
+
+WIP
+
+
+## Setup and Installation
+
+From your terminal, run:
+
+- ```git clone https://github.com/jlweave/tea_subsription```
+- ```bundle install```
+- ```rails db:create```
+- To run the tests: ```bundle exec rspec```
+- As of right now there is no front end to view this project with
+
+## Learning Goals
+
+- Create an endpoint to subscribe a customer to a tea subscription
+- Create an endpoint to cancel a customer’s tea subscription
+- Create an endpoint to see all of a customer’s subsciptions (active and cancelled)
+- A strong understanding of Rails
+- Ability to create restful routes
+- Demonstration of well-organized code, following OOP
+- Test Driven Development
+- Clear documentation.
+
+## Repository Owner
+
+| [<img alt="Lacey" width="75" src="https://avatars.githubusercontent.com/u/108754743?s=400&u=b8025841efd9b890069675118a850f8a58d82ed9&v=4"/>](https://www.linkedin.com/in/lacey-weaver-be-dev/) |
+ | ------------ |
+ | Lacey Weaver | 
+|  [LinkedIn](https://www.linkedin.com/in/lacey-weaver-be-dev/) | 
