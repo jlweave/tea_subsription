@@ -22,7 +22,10 @@
 ## Project Overview
 
 
-This project is for Mod 4 take home practice. The goals for this project are to create three endpoint with CRUD function: 1) customer's tea subscription 2) cancel customer's tea subscription 3) see all customer's subscription(active and cancelled)
+This project is for Mod 4 take home practice. The goals for this project are to create three endpoint with CRUD function: 
+- Customer's tea subscription 
+- Cancel customer's tea subscription 
+- See all customer's subscription(active and cancelled).
 
 ## Schema
 
