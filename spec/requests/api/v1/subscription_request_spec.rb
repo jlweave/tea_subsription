@@ -1,17 +1,72 @@
 require 'rails_helper'
 
-describe "Subscription API" do
-  it "sends a list of subscriptions" do
-    subscription = create_list(:subscription, 3)
+describe 'Subscription API' do
+  describe 'all subscriptions' do
+    before(:each) do
+      @customers = create_list(:customer, 2)
+      @teas = create_list(:tea, 6)
+      @subscription1 = create(:subscription, customer_id: @customers.first.id)
+      @subscription2 = create(:subscription, customer_id: @customers.last.id)
+    end
 
-    get '/api/v1/subscriptions'
+    it 'sends a list of subscriptions' do
+      customer = {
+        'customer_id': @customers.first.id
+      }
 
-    expect(response).to be_successful
-    subscriptions = JSON.parse(response.body, symbolize_names: true)
+      headers = { 'CONTENT_TYPE' => 'application/json' }
 
-    expect(subscriptions.count).to eq(3)    
+      get api_v1_customer_subscriptions_path(customer), headers: headers
 
-    subscriptions.each do |subscription|
+      expect(response).to be_successful
+      subscriptions = JSON.parse(response.body, symbolize_names: true)
+
+      expect(subscriptions.count).to eq(1)
+
+      subscriptions[:data][:subscriptions].each do |subscription|
+    
+        expect(subscription).to have_key(:id)
+        expect(subscription[:id]).to be_an(Integer)
+
+        expect(subscription).to have_key(:title)
+        expect(subscription[:title]).to be_a(String)
+
+        expect(subscription).to have_key(:price)
+        expect(subscription[:price]).to be_a(Integer)
+
+        expect(subscription).to have_key(:status)
+        expect(subscription[:status]).to be_a(String)
+
+        expect(subscription).to have_key(:frequency)
+        expect(subscription[:frequency]).to be_a(String)
+      end
+    end
+  end
+
+  describe 'create' do
+    before(:each) do
+      @customers = create_list(:customer, 2)
+      @teas = create_list(:tea, 6)
+      @subscription1 = create(:subscription, customer_id: @customers.first.id)
+      @subscription2 = create(:subscription, customer_id: @customers.last.id)
+    end
+
+    it 'create a new subscription' do
+      sub_params = {
+        'title': @teas.first.title,
+        'price': 10.25,
+        'status': 'Active',
+        'frequency': 'Annually',
+        'tea_id': @teas.first.id,
+        'customer_id': @customers.first.id
+      }
+
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      post api_v1_customer_subscriptions_path(@customers.first.id), headers: headers, params: JSON.generate(sub_params)
+
+      subscription = JSON.parse(response.body, symbolize_names: true)[:data]
+
       expect(subscription).to have_key(:id)
       expect(subscription[:id]).to be_an(Integer)
 
@@ -24,8 +79,8 @@ describe "Subscription API" do
       expect(subscription).to have_key(:status)
       expect(subscription[:status]).to be_a(String)
 
-      expect(subscription).to have_key(:fequencey)
-      expect(subscription[:fequencey]).to be_a(String)
-    end    
+      expect(subscription).to have_key(:frequency)
+      expect(subscription[:frequency]).to be_a(String)
+    end
   end
 end

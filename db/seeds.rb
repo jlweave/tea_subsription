@@ -5,3 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+3.times do 
+  Customer.create!(
+    first_name: Faker::Name.first_name, 
+    last_name: Faker::Name.last_name, 
+    email: Faker::Internet.email, 
+    address: Faker::Address.full_address )
+end
+
+10.times do 
+  Tea.create!(
+    title: Faker::Tea.variety,  
+    description: Faker::Tea.type, 
+    temperature: Faker::Number.between(from: 90, to: 212), 
+    brew_time: Faker::Number.between(from: 120, to: 440))
+end
+
+#first
+Subscription.create!(
+  title: Tea.first.title,
+  price: Faker::Number.between(from: 500, to: 100),
+  status: 0,
+  frequency: Faker::Subscription.payment_term,
+  tea_id: Tea.first.id,
+  customer_id: Customer.first.id
+)
+
+#last
+Subscription.create!(
+  title: Tea.first.title,
+  price: Faker::Number.between(from: 500, to: 100),
+  status: 0,
+  frequency: Faker::Subscription.payment_term,
+  tea_id: Tea.first.id,
+  customer_id: Customer.first.id
+)
