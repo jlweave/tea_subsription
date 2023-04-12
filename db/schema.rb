@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2023_04_08_173225) do
     t.string "title"
     t.integer "price"
     t.string "status"
-    t.string "fequencey"
+    t.string "frequency"
     t.bigint "customer_id"
     t.bigint "tea_id"
     t.datetime "created_at", null: false
