@@ -5,16 +5,21 @@ class Api::V1::SubscriptionsController < ApplicationController
     if subscription.save
       render json: SubscriptionSerializer.new_subscription(subscription), status: 201
     else
-      render json: {errors: "Subscription was not created"}, status: 404
+      render json: {errors: "Subscription was NOT created!"}, status: 404
     end
   end
-  # def update
-  #   if Item.update(params[:id], item_params).save&&Item.exists?(params[:id])
-  #     render json: ItemSerializer.new(Item.update(params[:id], item_params))
-  #   else
-  #     render json: {errors: "Item was not created"}, status: 404
-  #   end
-  # end
+  
+  def update
+    subscription = Subscription.find(params[:id])
+
+    if Subscription.update(sub_params)
+      # render json: { 'data': { 'success': "Changes to your subscription have been UPDATED"}}
+      render json: SubscriptionSerializer.new_subscription(Subscription.update(params[:id], sub_params))
+    else
+      render json: {errors: "Subscription was NOT updated!"}, status: 404
+    end
+  end
+
   def index
     customer = Customer.find(params[:customer_id])
     subs = customer.subscriptions
