@@ -37,7 +37,7 @@ Here is a list of all mapped client requests with their respective json response
 <summary> 'customer's tea subscription' </summary>
 <br>
   
- WIP
+https://documenter.getpostman.com/view/25513104/2s93Xx1jRo
   
  </details>
  
@@ -45,7 +45,7 @@ Here is a list of all mapped client requests with their respective json response
 <summary> 'cancel customer's tea subscription' </summary>
 <br>
 
-WIP
+https://documenter.getpostman.com/view/25513104/2s93Xx1jRo
 
 </details>
   
@@ -53,7 +53,7 @@ WIP
 <summary> 'show all customers subscriptions (active and cancelled)' </summary>
 <br> 
 
-WIP
+https://documenter.getpostman.com/view/25513104/2s93Xx1jRo
 
  </details> 
 
